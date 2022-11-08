@@ -1,0 +1,58 @@
+:root {
+  --form-control-color: #f4f4f4;
+  --form-control-color2: #3197EE;
+  --color-primary: black;
+  --color-secondary: white;
+  --color-contrast:#333;
+  --color-contrast-medium:#ddd;
+  --color-contrast-light:#eee;
+  --color-gold:rgb(215, 215, 6);
+  --color-text:var(--color-contrast);
+  --aside-menu-bg:var(--color-contrast-light);
+  --aside-menu-border:var(--color-contrast);
+  --aside-color: var(--color-contrast);
+  --body-color:transparent;
+  --nav-bg:var(--color-primary);
+  --nav-links: var(--color-secondary);
+  --header-bg:var(--color-secondary);
+  --fieldset-bg: var(--color-contrast-medium);
+  --fieldset-color: unset;
+  --fieldset-legend-bg: var(--color-secondary);
+  --modal-bg:var(--color-secondary);
+  --modal-mask:var(--color-primary);
+  --image-mock:var(--color-contrast-light);
+  --aside-bg:transparent;
+  --footer-bg:var(--color-contrast-medium);
+  --footer-nav-bg:var(--color-primary);
+  --footer-nav-color:var(--color-secondary);
+  --card-bg:var(--color-contrast-light);
+  --card-footer-bg:var(--color-contrast);
+}
+#theme:checked+.main-wrapper{
+  --color-text:var(--color-secondary);
+  --body-color:var(--color-primary);
+  --aside-menu-bg:var(--color-secondary);
+  --nav-bg:var(--color-secondary);
+  --nav-links: var(--color-primary);
+  --header-bg:var(--color-primary);
+  --fieldset-bg: var(--color-secondary);
+  --fieldset-legend-bg: var(--color-contrast-light);
+  --fieldset-color: var(--color-primary);
+  --modal-bg:var(--color-primary);
+  --modal-mask:var(--color-secondary);
+  --image-mock:var(--color-contrast-medium);
+  --footer-nav-bg:var(--color-secondary);
+  --footer-nav-color:var(--color-primary);
+  --card-bg:var(--color-contrast);
+  --card-footer-bg:var(--color-contrast-medium);
+}
+@media screen and (max-width: 768px) {
+  :root{
+    --aside-bg:var(--color-contrast);
+    --nav-color:var(--color-secondary);
+  }
+  #theme:checked+.main-wrapper{
+    --aside-bg:var(--color-secondary);
+    --nav-color:var(--color-primary);
+  }
+}
