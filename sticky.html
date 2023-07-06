@@ -16,10 +16,16 @@
     <input type="radio" name="steps" id="step3" />
     <input type="radio" name="steps" id="step4" />
     <input type="radio" name="steps" id="step5" />
+    <div class="search-bar">
+      <div class="search-wrapper">
+      search icon 
+       icon|ico|icon 
+      </div>
+    </div>
     <header>
       <div class="top-section">
-        <h1>My Website</h1>
-        <p>Resize the browser window to see the effect.</p>
+        
+        <img src="assets/img/image.jpg" class="img" ="plage tropicale" />
       </div>
       <nav>
         <label for="collapseMenu"></label>
@@ -64,6 +70,7 @@
           <form>
             <div class="carousel">
               <fieldset>
+                <a href="#customModal">Open Modal</a>
                 <legend>1.</legend>
                 <p>
                   <label>sit amet: </label>
@@ -166,8 +173,11 @@
           <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
             concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
             Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-
-          <ul class="slider">
+          <div class="custom-modal" id="customModal">
+            <a href="#">close x</a>
+            hello modal
+          </div>
+          <ul class="slider" id="slider">
             <li class="card">
               <div class="card-container">
                 <div class="card-top">
@@ -357,6 +367,26 @@
       </nav>
     </footer>
   </div>
+  <script>
+    document.addEventListener("scroll", (e) => {
+      let s = e.target.scrollingElement.scrollTop
+      let filterVal = s === 0 ? 0 : Math.ceil((s / 20));
+      let opacityVal = (1 - (s/screen.height)*2.5)>=0 ? (1 - (s/screen.height)*2.5) :0;
+      let opacity = 0
+      let opacity2 = .7
+      if(s>125){
+        opacity = (s-125)/125>1 ? 1 : (s-125)/80;
+        opacity2 = 1
+      }else{
+        opacity2 = .7
+      }
+      let scale = s === 0 ? 1.15 : (1.15 - (s/(screen.height*3)))>=0 ? (1.15 - (s/(screen.height*3))) :0;;
+      scale = scale< 1 ? 1 : scale;
+      document.getElementsByClassName('search-bar')[0].style.background = 'linear-gradient(180deg, rgba(0,0,0,'+opacity2+') 0%, rgba(0,0,0,'+opacity+') 90%)';
+      document.getElementsByClassName('img')[0].style.opacity = opacityVal;
+      document.getElementsByClassName('img')[0].style.transform = 'scale('+scale+')';
+    });
+  </script>
 </body>
 
 </html>
